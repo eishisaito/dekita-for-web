@@ -1,0 +1,61 @@
+{
+  "name": "できたよ！メダル",
+  "short_name": "できたよ！",
+  "description": "子ども向けタスク管理・ご褒美アプリ",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F5F5F5",
+  "theme_color": "#FF6B47",
+  "orientation": "portrait",
+  "scope": "./",
+  "lang": "ja",
+  "categories": ["education", "kids", "productivity"],
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "メダル獲得",
+      "short_name": "メダル",
+      "description": "新しいメダルを獲得する",
+      "url": "./?action=medal",
+      "icons": [
+        {
+          "src": "./icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "コレクション",
+      "short_name": "履歴",
+      "description": "獲得したメダルを見る",
+      "url": "./?action=history",
+      "icons": [
+        {
+          "src": "./icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

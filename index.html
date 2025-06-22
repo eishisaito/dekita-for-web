@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>できたよ！メダル 🏆</title>
+    
+    <!-- PWA メタタグ -->
+    <meta name="application-name" content="できたよ！メダル">
+    <meta name="description" content="子ども向けタスク管理・ご褒美アプリ">
+    <meta name="theme-color" content="#FF6B47">
+    <meta name="background-color" content="#F5F5F5">
+    
+    <!-- iOS Safari用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="できたよ！メダル">
+    
+    <!-- マニフェスト -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIuOBp+OBjeOBn+OCiO+8geODoeODgOODqyIsCiAgInNob3J0X25hbWUiOiAi44Gn44GN44Gf44KI77yBIiwKICAiZGVzY3JpcHRpb24iOiAi5a2Q44Gp44KC5ZCR44GR44K/44K544Kv566h55CG44O744GU6KSS576O44Ki44OX44OqIiwKICAic3RhcnRfdXJsIjogIi4vIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjRjVGNUY1IiwKICAidGhlbWVfY29sb3IiOiAiI0ZGNkI0NyIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M00zUnZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQXhNakFnTVRJd0lpQjNhV1IwYUQwaU1USXdJaUJvWldsbmFIUTlJakV5TUNJaVBnbzhZMmx5WTJ4bElHTjRQU0kyTUNJZ1kzaDlJall3SWlCeVBTSTBNQ0lnWm1sc2JEMGlJMFpHUmtJME55SWdMejRLUEhSbGVIUWdlRDBpTmpBaUlIazlJamt3SWlCbWIyNTBMV1poYldsc2VUMGLUW0YwWVc0dExYTmhiaUYgZm05dWRDMXphWHBsUFNJek1DSWdkR1Y0ZEMxaGJtTm9iM0k5SWcWQUlpQm1hV3hzUFNJalJrWkdJaUI4Sw==IiwKICAgICAgInNpemVzIjogIjEyMHgxMjAiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTTNSdmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeE9UQWdNVGt3SWlCM2FXUjBhRDBpTVRrd0lpQm9aV2xuYUhROUlqRTVNQ0lqUGdvOFkybHlZMnhsSUdONFBTSTVOU0lnWTNrOUlqazFJaUJ5UFNJMk1DSWdabWxzYkQwaUkwWkdRa1EwTnlJZ0x6NEtQSFJsZUhRZ2VEMGlPVFVpSUhrOUlqRTFNQ0lnWm05dWRDMW1ZVzFwYkhrOUlYTjVjM1JsYlMxMWFTd2dZVzFoZG1GbVpTd2dZbWhoYUdOdmRHRWdhSFZ6WVdsdVpTQm1iMjUwTFhOcGVtVTlJalEwSWlCMFpYaDBMV0Z1WTJodmNqMGlUV2xrWkd4bElpQm1hV3hzUFNJalJrWkdJajRLUEM5emRtYysifSwKICAgICAgInNpemVzIjogIjE5MHgxOTAiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfQogIF0sCiAgImNhdGVnb3JpZXMiOiBbImVkdWNhdGlvbiIsICJraWRzIiwgInByb2R1Y3Rpdml0eSJdCn0=">
+    
+    <!-- アイコン -->
+    <link rel="icon" type="image/png" href="./icon-192.png">
+    
+    <!-- iOS用アイコン -->
+    <link rel="apple-touch-icon" href="./icon-192.png">
+    
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1 class="app-title">😊 DEKITA!</h1>
+        </div>
+
+        <div class="main-content">
+            <!-- メダル一覧 -->
+            <div class="medals-list" id="medalsList">
+                <!-- メダルアイテムがここに表示されます -->
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <button class="nav-button active" onclick="switchView('main')">メダル</button>
+            <button class="nav-button" onclick="switchView('history')">れきし</button>
+            <button class="nav-button" onclick="switchView('settings')">せってい</button>
+        </div>
+    </div>
+
+    <!-- 完了モーダル -->
+    <div id="completionModal" class="modal">
+        <div class="modal-content">
+            <div class="celebration-modal">
+                <div class="celebration-medal">🏆</div>
+                <div class="celebration-text">よくできました！</div>
+                <div class="celebration-subtitle" id="completionSubtitle">ごはんメダルをゲット！</div>
+                <button class="btn" onclick="closeModal('completionModal')">ありがとう！</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- メダル追加モーダル -->
+    <div id="addMedalModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 24px;">新しいメダル</h2>
+            <div class="form-group">
+                <label for="medalName">メダルの名前:</label>
+                <input type="text" id="medalName" placeholder="例：しゅくだい">
+            </div>
+            <div class="form-group">
+                <label for="medalIcon">アイコン:</label>
+                <select id="medalIcon">
+                    <option value="📚">📚 べんきょう</option>
+                    <option value="🎹">🎹 ピアノ</option>
+                    <option value="🏃">🏃 うんどう</option>
+                    <option value="🎨">🎨 おえかき</option>
+                    <option value="🌱">🌱 おてつだい</option>
+                    <option value="⭐">⭐ とくべつ</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="medalGoal">もくひょう（1-100）:</label>
+                <input type="number" id="medalGoal" min="1" max="100" value="1">
+            </div>
+            <div>
+                <button class="btn" onclick="addNewMedal()">つくる</button>
+                <button class="btn btn-secondary" onclick="closeModal('addMedalModal')">やめる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- メダル履歴モーダル -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content" style="max-width: 90%; max-height: 80vh; overflow-y: auto;">
+            <h2 style="margin-bottom: 24px;">メダルコレクション</h2>
+            <div id="historyContent">
+                <!-- 履歴内容がここに表示されます -->
+            </div>
+            <button class="btn" onclick="closeModal('historyModal')">とじる</button>
+        </div>
+    </div>
+
+    <!-- メダルコレクションモーダル -->
+    <div id="medalCollectionModal" class="modal">
+        <div class="modal-content" style="max-width: 90%; max-height: 80vh; overflow-y: auto;">
+            <div id="medalCollectionHeader" style="margin-bottom: 24px; text-align: center;">
+                <!-- メダル情報がここに表示されます -->
+            </div>
+            <div id="medalCollectionContent">
+                <!-- メダルコレクションがここに表示されます -->
+            </div>
+            <button class="btn" onclick="closeModal('medalCollectionModal')">とじる</button>
+        </div>
+    </div>
+
+    <!-- 設定モーダル -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 24px;">せってい</h2>
+            <div class="medal-list" id="settingsMedalList">
+                <!-- 設定用メダルリストがここに表示されます -->
+            </div>
+            <div>
+                <button class="btn" onclick="showAddMedalModal()">メダルをついか</button>
+                <button class="btn btn-secondary" onclick="resetAllMedals()">すべてリセット</button>
+                <button class="btn btn-secondary" onclick="closeModal('settingsModal')">とじる</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
